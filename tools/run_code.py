@@ -48,7 +48,7 @@ def run_code(code: str) -> dict:
     try: 
         filename = "runner.py"
         os.makedirs("AgentFiles", exist_ok=True)
-        with open(os.path.join("LLMFiles", filename), "w") as f:
+        with open(os.path.join("AgentFiles", filename), "w") as f:
             f.write(code)
 
         proc = subprocess.Popen(
@@ -56,7 +56,7 @@ def run_code(code: str) -> dict:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
-            cwd="LLMFiles"
+            cwd="AgentFiles"
         )
 
 
