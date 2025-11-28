@@ -22,9 +22,9 @@ def download_file(url: str, filename: str) -> str:
         os.makedirs(directory_name, exist_ok=True)
         path = os.path.join(directory_name,filename)
         with open(path, "wb") as f:
-            for chunk in response.iter_content(chunk_size=8192)
-            if chunk:
-                f.write(chunk)
+            for chunk in response.iter_content(chunk_size=8192):
+                if chunk:
+                    f.write(chunk)
     
     except Exception as e:
         return f"Error downloading file: {str(e)}"
