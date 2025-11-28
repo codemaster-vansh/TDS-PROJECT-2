@@ -1,8 +1,8 @@
 ---
 title: Agentic Autonomous Quiz Solver
 emoji: 🚀
-colorFrom: teal
-colorTo: emerald
+colorFrom: red
+colorTo: blue
 sdk: docker
 pinned: false
 app_file: main.py
