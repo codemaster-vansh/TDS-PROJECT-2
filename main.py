@@ -23,8 +23,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 START_TIME = time.time()
-@app.get("/healths")
-def healthz():
+@app.get("/health")
+def health():
     """Simple liveness check."""
     return {
         "status": "ok",
