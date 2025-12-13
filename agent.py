@@ -21,6 +21,8 @@ SECRET = os.getenv("SECRET")
 RECURSION_LIMIT = 5000
 MAX_TOKENS = 60000
 
+def dummy_token_counter(messages):
+    return sum(len(m.content)/4 for m in messages)
 
 # -------------------------------------------------
 # STATE
@@ -134,7 +136,7 @@ def agent_node(state: AgentState):
         strategy="last",
         include_system=True,
         start_on="human",
-        token_counter=llm, 
+        token_counter=dummy_token_counter, 
     )
     
     # Better check: Does it have a HumanMessage?
