@@ -19,7 +19,7 @@ EMAIL = os.getenv("EMAIL")
 SECRET = os.getenv("SECRET")
 
 RECURSION_LIMIT = 5000
-MAX_TOKENS = 60000
+MAX_TOKENS = 100000
 
 def dummy_token_counter(messages):
     return sum(len(m.content)/4 for m in messages)
@@ -48,7 +48,7 @@ rate_limiter = InMemoryRateLimiter(
 
 llm = init_chat_model(
     model_provider="google_genai",
-    model="gemini-1.5-flash-001",
+    model="gemini-2.0-flash-exp",
     rate_limiter=rate_limiter
 ).bind_tools(TOOLS)
 
